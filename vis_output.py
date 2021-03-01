@@ -4,9 +4,11 @@ from target import TARGET
 if TARGET:
     import led_frame
 
+
 def setup():
     if TARGET:
         led_frame.setup()
+
 
 def print_stuff(matrix):
     if TARGET:
@@ -28,12 +30,15 @@ def print_stuff(matrix):
         stuff += '\n'
     print(stuff)
 
+
 def set_pos(y, x, color):
     if TARGET:
         led_frame.set_pixel(y, x, color)
 
+
 def show_numbers(top, botton, t_color, b_color):
     matrix = EMPTY_MATRIX.copy()
+
 
 def set_digit(matrix, y, x, digt, color):
     pass

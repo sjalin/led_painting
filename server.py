@@ -6,8 +6,6 @@ from time import sleep
 from target import TARGET
 
 
-be_alive = True
-
 
 def server(q:Queue):
     print('Starting server')
@@ -30,7 +28,7 @@ def server(q:Queue):
     sock.listen()
     print('Socket listened')
     q.put('server started')
-    global be_alive
+    be_alive = True
     while be_alive:
         connection, client_address = sock.accept()
         try:

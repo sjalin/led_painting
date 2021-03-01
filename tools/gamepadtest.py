@@ -4,9 +4,12 @@ GAMEPAD_LOCATION = '/dev/input/event0'
 
 gamepad = InputDevice(GAMEPAD_LOCATION)
 
-#prints out device info at start
-print(gamepad)
+print(f'Gamepad info: {gamepad}')
 
-#evdev takes care of polling the controller in a loop
 for event in gamepad.read_loop():
+    # Print stuff about gamepad events
+    print('Raw data:')
     print(categorize(event))
+
+    print('Specific data:')
+    print(f'Type: {event.type} Code: {event.code} Value: {event.value}')

@@ -1,8 +1,10 @@
 from time import sleep
 import RPi.GPIO as GPIO
 
+import general
+
 DIODS_PER_PIXEL = 3
-GRID_SIZE = 12
+GRID_SIZE = general.MATRIX_X
 TOTAL_LEDS = GRID_SIZE * DIODS_PER_PIXEL
 GREEN_POS = 0
 RED_POS = 1
