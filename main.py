@@ -45,7 +45,7 @@ def thread_handler(q: Queue):
     while True:
         if not game_thread:
             print(f' ------------- NOTHING STARTED -------------')
-            q.put('snake:first')
+            q.put('gol:first')
         try:
             data = q.get()
             print(f' ------------- TH data: {data} -------------')
@@ -63,7 +63,7 @@ def thread_handler(q: Queue):
                 game_thread.start()
             elif 'tetris' in data:
                 print('<<<<<<<<<<<<<<TETRIS NOT IMPLEMENTED>>>>>>>>>>>>>>>>')
-            elif 'snake' in data:
+            elif 'snake' in data and game_thread.name != 'Snake':
                 if 'first' not in data:
                     game_queue.put('stop')
                 print(f' ------------- STARING SNAKE -------------')
