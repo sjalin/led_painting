@@ -65,5 +65,5 @@ def gamepad(q: Queue):
                 print(f'new dir {tempdir}')
                 totdir = tempdir
                 q.put('d:'+tempdir)
-    except * as e:
+    except Exception as e:
         gamepad_connected_set(e)
