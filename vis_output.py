@@ -1,3 +1,5 @@
+import copy
+
 from general import EMPTY_MATRIX
 from target import TARGET
 

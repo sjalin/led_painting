@@ -44,7 +44,6 @@ def gol(q: Queue):
             data = q.get(block=False)
             if data == 'stop':
                 print('GOL stop')
-                time.sleep(5)
                 run = False
                 break
             elif 'rand:' in data:
