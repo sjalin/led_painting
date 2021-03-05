@@ -37,7 +37,7 @@ def snake(q: Queue):
         print(f'Points last:  {points_last}')
         print(f'Points max:   {points_max}')
         print(f'Direction:    {direction}')
-        print(f'Gamepad:      {gamepad_connected}')
+        print(f'Gamepad:      {gamepad_connected_get()}')
         time.sleep(cycle_time)
 
         try:

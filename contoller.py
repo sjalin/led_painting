@@ -1,8 +1,8 @@
+from general import *
 from queue import Queue
 from time import sleep
 
 from evdev import InputDevice, ecodes
-from general import *
 
 # Button code variables
 nvidia_btn = 217
@@ -22,10 +22,7 @@ def gamepad(q: Queue):
     q.put('gamepad started')
     while not gamepad_input:
         try:
-            gamepad_input = InputDevice('/dev/input/event0')
-            global gamepad_connected
-            gamepad_connected = InputDevice.info
-
+            gamepad_connected_set(InputDevice.info)
             break
         except (FileNotFoundError, PermissionError) as e:
             pass

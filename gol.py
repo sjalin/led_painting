@@ -27,7 +27,7 @@ def gol(q: Queue):
         print(f'Last iterations:  {last_iterations}')
         print(f'Total iterations: {total_iterations}')
         print(f'Total universes:  {universe_number}')
-        print(f'Gamepad:      {gamepad_connected}')
+        print(f'Gamepad:          {gamepad_connected_get()}')
         time.sleep(CYCLE_TIME)
         matrix_copy = copy.deepcopy(matrix)
         for y, line in enumerate(matrix):
