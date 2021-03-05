@@ -23,7 +23,7 @@ def start():
     server_thread.start()
 
     if handler_queue.get() == 'server started':
-        print('starting gamepad')
+        print('Starting gamepad')
         gamepad_thread.start()
     else:
         print('Failed to start server, or something')

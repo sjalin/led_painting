@@ -25,7 +25,8 @@ def gamepad(q: Queue):
         except FileNotFoundError:
             pass
 
-    q.put('Gamepad found and started')
+    q.put('gamepad started')
+    print('Gamepad found and started')
     # loop and filter by event code and print the mapped label
     for event in gamepad_input.read_loop():
         sleep(0.001)
