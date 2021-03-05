@@ -20,7 +20,7 @@ def gamepad(q: Queue):
 
     # Wait until
     q.put('gamepad started')
-    while True
+    while True:
         while not gamepad_input:
             try:
                 gamepad_input = InputDevice('/dev/input/event0')
@@ -29,7 +29,7 @@ def gamepad(q: Queue):
             except (FileNotFoundError, PermissionError) as e:
                 gamepad_connected_set(e)
                 pass
-    
+
         print('Gamepad found and started')
         # loop and filter by event code and print the mapped label
         try:
