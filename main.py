@@ -42,6 +42,9 @@ def start():
 def thread_handler(q: Queue):
     game_thread = None
     game_queue = Queue()
+    game_pos = 0
+    games = ['gol', 'snake']
+
     while True:
         if not game_thread:
             print(f' ------------- NOTHING STARTED -------------')
@@ -54,6 +57,13 @@ def thread_handler(q: Queue):
                 game_thread.join()
                 print('Thread handler stop')
                 break
+            elif 'next game' in data:
+                game_pos += 1
+                try:
+                    q.put(games[game_pos])
+                except IndexError:
+                    game_pos = 0
+                    q.put(games[game_pos])
             elif 'gol' in data:
                 if 'first' not in data:
                     game_queue.put('stop')

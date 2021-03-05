@@ -34,7 +34,7 @@ def gamepad(q: Queue):
         if event.type == ecodes.EV_KEY:
             if event.value == 1:
                 if event.code == nvidia_btn:
-                    q.put('snake')
+                    q.put('next game')
                 else:
                     print(f'Unknown keypress: {event.code}')
         elif event.type == ecodes.EV_ABS:
