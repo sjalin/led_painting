@@ -43,6 +43,7 @@ def gol(q: Queue):
             data = q.get(block=False)
             if data == 'stop':
                 print('GOL stop')
+                time.sleep(5)
                 break
             elif 'rand:' in data:
                 rate = float(data.split(':')[1])/100
