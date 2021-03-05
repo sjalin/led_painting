@@ -5,7 +5,7 @@ import time
 import vis_output
 from queue import Queue, Empty
 
-from general import MATRIX_X, MATRIX_Y, EMPTY_MATRIX
+from general import *
 
 
 class SnakeError(Exception):
@@ -37,6 +37,7 @@ def snake(q: Queue):
         print(f'Points last:  {points_last}')
         print(f'Points max:   {points_max}')
         print(f'Direction:    {direction}')
+        print(f'Gamepad:      {gamepad_connected}')
         time.sleep(cycle_time)
 
         try:
