@@ -16,11 +16,12 @@ def gamepad(q: Queue):
     ydir = ''
     totdir = ''
 
-    gamepad_input = None
+
 
     # Wait until
     q.put('gamepad started')
     while True:
+        gamepad_input = None
         while not gamepad_input:
             try:
                 gamepad_input = InputDevice('/dev/input/event0')
