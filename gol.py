@@ -68,7 +68,7 @@ def gol(q: Queue):
 def reset_univers(rate=0.3):
     if rate == 0 or rate > 1:
         rate = 0.3
-    matrix = [['X' if random.random() < rate else 'r' for _ in range(MATRIX_X)] for __ in range(MATRIX_Y)]
+    matrix = [['X' if random.random() < rate else ' ' for _ in range(MATRIX_X)] for __ in range(MATRIX_Y)]
     matrix_list = []
     return matrix, matrix_list
 
