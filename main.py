@@ -64,7 +64,7 @@ def thread_handler(q: Queue):
                 except IndexError:
                     game_pos = 0
                     q.put(games[game_pos])
-                 print(f'Next game: {games[game_pos]}')
+                print(f'Next game: {games[game_pos]}')
             elif 'gol' in data:
                 if 'first' not in data:
                     game_queue.put('stop')
