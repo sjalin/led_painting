@@ -22,7 +22,8 @@ def gamepad(q: Queue):
     q.put('gamepad started')
     while not gamepad_input:
         try:
-            gamepad_connected_set(InputDevice.info)
+            gamepad_input = InputDevice('/dev/input/event0')
+            gamepad_connected_set(gamepad_input.name)
             break
         except (FileNotFoundError, PermissionError) as e:
             pass
