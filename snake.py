@@ -27,8 +27,9 @@ def snake(q: Queue):
 
     vis_output.setup()
     matrix, the_snake = reset_univers()
+    run = True
 
-    while True:
+    while run:
         reset = False
         os.system('clear')
         vis_output.print_stuff(matrix)
@@ -42,7 +43,8 @@ def snake(q: Queue):
             while not q.empty():
                 data = q.get(block=False)
                 if data == 'stop':
-                    print('GOL stop')
+                    print('Sanke stop')
+                    run = False
                     break
                 elif 'reset' in data:
                     reset = True
