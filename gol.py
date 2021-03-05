@@ -91,10 +91,10 @@ def calc_place(matrix, x, y):
         if total == 2 or total == 3:
             return 'X'
         else:
-            return 'r'
+            return ' '
     else:
         if total == 3:
             return 'X'
         else:
-            return 'r'
+            return ' '
 
