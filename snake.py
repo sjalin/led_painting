@@ -79,9 +79,9 @@ def snake(q: Queue):
             universe_number += 1
             direction = 'n'
             dir = direction
-            matrix, the_snake = reset_univers()
             vis_output.show_numbers(points_last, points_max, 'b', 'r')
             time.sleep(5)
+            matrix, the_snake = reset_univers()
 
 
 def reset_univers(rate=0.3):

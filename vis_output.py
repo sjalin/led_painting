@@ -91,6 +91,9 @@ def set_pos(y, x, color):
 def show_numbers(top, bottom, t_color, b_color):
     matrix = EMPTY_MATRIX.copy()
 
+    print(f'top {top}')
+    print(f'bottom {bottom}')
+
     set_digit(matrix, 11, 0, get_digit_from_numer(top, 2), t_color)
     set_digit(matrix, 11, 4, get_digit_from_numer(top, 1), t_color)
     set_digit(matrix, 11, 8, get_digit_from_numer(top, 0), t_color)
@@ -103,7 +106,9 @@ def show_numbers(top, bottom, t_color, b_color):
 
 
 def get_digit_from_numer(number, n):
-    return number // 10**n % 10
+    ret_val = number // 10**n % 10
+    print(f'number {number} -> ret_val {ret_val}')
+    return ret_val
 
 
 def set_digit(matrix, y, x, digt, color):
