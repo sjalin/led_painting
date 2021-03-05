@@ -18,8 +18,9 @@ def gol(q: Queue):
     total_iterations = 0
     universe_number = 1
     rate = 0.3
+    run = True
 
-    while True:
+    while run:
         os.system('clear')
         vis_output.print_stuff(matrix)
         print(f'Iterations:       {iterations}')
@@ -44,6 +45,7 @@ def gol(q: Queue):
             if data == 'stop':
                 print('GOL stop')
                 time.sleep(5)
+                run = False
                 break
             elif 'rand:' in data:
                 rate = float(data.split(':')[1])/100

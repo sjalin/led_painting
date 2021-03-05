@@ -57,6 +57,7 @@ def thread_handler(q: Queue):
             elif 'gol' in data:
                 if 'first' not in data:
                     game_queue.put('stop')
+                    game_thread.join()
                 print(f' ------------- STARING GOL -------------')
                 game_thread = threading.Thread(target=gol.gol, name='Game of life',
                                            args=(game_queue, ))
@@ -66,6 +67,7 @@ def thread_handler(q: Queue):
             elif 'snake' in data and game_thread.name != 'Snake':
                 if 'first' not in data:
                     game_queue.put('stop')
+                    game_thread.join()
                 print(f' ------------- STARING SNAKE -------------')
                 game_thread = threading.Thread(target=snake.snake, name='Snake',
                                            args=(game_queue, ))
