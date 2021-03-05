@@ -4,6 +4,7 @@ import random
 import time
 import vis_output
 from queue import Queue, Empty
+from general import *
 
 CYCLE_TIME = 1
 
