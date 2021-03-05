@@ -89,7 +89,7 @@ def set_pos(y, x, color):
 
 
 def show_numbers(top, bottom, t_color, b_color):
-    matrix = EMPTY_MATRIX.copy()
+    matrix = copy.deepcopy(EMPTY_MATRIX)
 
     print(f'top {top}')
     print(f'bottom {bottom}')
